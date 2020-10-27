@@ -27,9 +27,14 @@ This app is based on PHP framework "Laravel" version 8.9.0 with using JS framewo
 
 ### Usage
 
-- Go to back-office and upload XML file with books data: 
+- Go to back-office and upload XML file with books data:
 ![Books Library Back-Office](resources/img/backoffice.png)
 - The uploaded file will be processed by laravel queue job, so you need to keep run it on server by command `php artisan queue:work`,
 - Result of the import from queue you can check in the log file `/storage/logs/laravel.log`.
+
+### Sample data for import
+
+- [test-100-books.xml](resources/xml/test-100-books.xml) - 100 books
+- [demo-1000-books.xml](resources/xml/demo-1000-books.xml) - 1000 books
 
 Author: **Yuriy Bakhtin**

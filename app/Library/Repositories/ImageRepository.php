@@ -25,7 +25,7 @@ class ImageRepository
      * Response thumbnail by image path
      *
      * @param string $imagePath
-     * @param array $width_height [0 => width, 1 => height]
+     * @param $width_height [0 => width, 1 => height]
      * @return \Illuminate\Http\Response
      */
     public function thumbnail($imagePath, ...$width_height)
