@@ -6,7 +6,7 @@ use App\Models\Book;
 use Illuminate\Http\UploadedFile;
 use Illuminate\Support\Facades\Storage;
 
-class ImporterXML
+class ImporterXmlService
 {
     protected $uploadedFilePath;
     protected $originalFileName;
@@ -15,7 +15,7 @@ class ImporterXML
      * Upload XML file for further import by queue
      *
      * @param UploadedFile $uploadedFile
-     * @return RedirectResponse
+     * @return \Illuminate\Http\RedirectResponse
      */
     public function upload(UploadedFile $uploadedFile)
     {
@@ -40,7 +40,7 @@ class ImporterXML
     /**
      * Import books from the uploaded XML file
      *
-     * @param array $importData [uploaded_file_path, original_file_name]
+     * @param array $params [uploaded_file_path, original_file_name]
      * @return void
      */
     public function import($params)
@@ -182,7 +182,7 @@ class ImporterXML
      * @param string $imageName
      * @return string|false Image path
      */
-    function loadImage($imageUrl, $imageName)
+    public function loadImage($imageUrl, $imageName)
     {
         if (empty($imageUrl) ||
             !($imageContent = file_get_contents($imageUrl))) {

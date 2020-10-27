@@ -13,6 +13,6 @@ class ImporterServiceProvider extends ServiceProvider
      */
     public function register()
     {
-        $this->app->bind('BooksImporter', 'App\Library\Services\ImporterXML');
+        $this->app->bind('BooksImporter', 'App\Library\Services\ImporterXmlService');
     }
 }
